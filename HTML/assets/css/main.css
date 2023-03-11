@@ -438,6 +438,16 @@ input:focus {
   border-radius: 50%;
 }
 
+.card_details {
+  display: none;
+  transition: 0.3s;
+  padding-bottom: 20px;
+}
+
+.card_details.active {
+  display: block;
+}
+
 /* Responsive CSS */
 @media screen and (max-width: 991px) {
   .common_button {

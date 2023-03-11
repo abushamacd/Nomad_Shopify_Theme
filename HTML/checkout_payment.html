@@ -544,26 +544,125 @@
                         </div>
                         <!-- Card Info -->
                         <div class="card_info rounded-[3px] border-[1px] border-[#ddd] mt-[20px] p-[20px]">
-                            <div class="flex items-center">
-                                <input checked id="default-radio-1" type="radio" value="" name="default-radio"
-                                    class="w-4 h-4 text-[#000] border-gray-300 focus:ring-[#000] focus:ring-8 ">
-                                <label for="default-radio-1"
-                                    class="ml-2 text-[#545454] text-[14px] font_g_book capitalize table-cell w-full">
-                                    <p class="table-cell w-full">Standard Shipping (4-5 Business Days)</p>
-                                    <p class="table-cell">$<span class="ammount">6.95</span>
-                                    </p>
-                                </label>
+                            <div onclick="paymentCard()" class="payments">
+                                <div class="flex items-center py-[15px] border-b">
+                                    <input checked id="credit_card" type="radio" value="" name="payment_card"
+                                        class="w-4 h-4 text-[#000] border-gray-300 focus:ring-[#000] focus:ring-8 ">
+                                    <label for="credit_card"
+                                        class="ml-2 text-[#545454] text-[14px] font_g_book capitalize table-cell w-full">
+                                        <p class="table-cell w-full">Credit card</p>
+                                    </label>
+                                </div>
+                                <div class="card_details active">
+                                    <div class="card_form ">
+                                        <div class="bg-[#FAFAFA] p-[20px] border-[1px] border-t-0">
+                                            <input placeholder="Card Number"
+                                                class="w-full py-[8px]  text-[14px] mb-[10px] rounded-[3px] border-2 border-gray-200 focus:outline-none focus:border-2 focus:border-black"
+                                                required type="text" name="cardnumber" id="cardnumber">
+                                            <input placeholder="Name of Card"
+                                                class="w-full py-[8px]  text-[14px] mb-[10px] rounded-[3px] border-2 border-gray-200 focus:outline-none focus:border-2 focus:border-black"
+                                                required type="text" name="cardname" id="cardname">
+                                            <div class="flex gap-[10px]">
+                                                <div class="md:w-1/2">
+                                                    <input placeholder="Expiration date (MM / YY)"
+                                                        class="w-full py-[8px] text-[14px] mb-[10px] rounded-[3px] border-2 border-gray-200 focus:outline-none focus:border-2 focus:border-black"
+                                                        type="text" name="cardDate" id="cardDate">
+                                                </div>
+                                                <div class="md:w-1/2">
+                                                    <input placeholder="Security code"
+                                                        class="w-full py-[8px] text-[14px] mb-[10px] rounded-[3px] border-2 border-gray-200 focus:outline-none focus:border-2 focus:border-black"
+                                                        required type="text" name="cardCode" id="cardCode">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <hr class="my-[10px]">
-                            <div class="flex items-center">
-                                <input id="default-radio-1" type="radio" value="" name="default-radio"
-                                    class="w-4 h-4 text-[#000] border-gray-300 focus:ring-[#000] focus:ring-8 ">
-                                <label for="default-radio-1"
-                                    class="ml-2 text-[#545454] text-[14px] font_g_book capitalize table-cell w-full">
-                                    <p class="table-cell w-full"> Expedited Shipping (FedEx) (2-3 Business Days)</p>
-                                    <p class="table-cell">$<span class="ammount">9.95</span>
-                                    </p>
-                                </label>
+                            <div onclick="paymentCard()" class="payments">
+                                <div class="flex items-center py-[15px] border-b">
+                                    <input id="shop_pay" type="radio" value="" name="payment_card"
+                                        class="w-4 h-4 text-[#000] border-gray-300 focus:ring-[#000] focus:ring-8 ">
+                                    <label for="shop_pay"
+                                        class="ml-2 text-[#545454] text-[14px] font_g_book capitalize table-cell w-full">
+                                        <img class="h-[30px]" height="" src="./assets/images/payment/shop_pay.png"
+                                            alt="">
+                                    </label>
+                                </div>
+                                <div class="card_details">
+                                    <div class="card_form">
+                                        <div class="bg-[#FAFAFA] p-[20px] border-[1px] border-t-0 text-center">
+                                            <i class="fa-regular fa-hand-point-right text-[150px] text-[#999]"></i>
+                                            <p class="font_g_book text-[12px]">After clicking “Complete Order”, you will
+                                                be redirected to Shop
+                                                Pay, Pay in full or in installments to complete your purchase securely.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="paymentCard()" class="payments">
+                                <div class="flex items-center py-[15px] border-b">
+                                    <input id="paypal" type="radio" value="" name="payment_card"
+                                        class="w-4 h-4 text-[#000] border-gray-300 focus:ring-[#000] focus:ring-8 ">
+                                    <label for="paypal"
+                                        class="ml-2 text-[#545454] text-[14px] font_g_book capitalize table-cell w-full">
+                                        <img class="h-[20px]" height="" src="./assets/images/payment/PayPal.svg" alt="">
+                                    </label>
+                                </div>
+                                <div class="card_details">
+                                    <div class="card_form">
+                                        <div class="bg-[#FAFAFA] p-[20px] border-[1px] border-t-0 text-center">
+                                            <i class="fa-regular fa-hand-point-right text-[150px] text-[#999]"></i>
+                                            <p class="font_g_book text-[12px]">After clicking “Complete Order”, you will
+                                                be redirected to Shop
+                                                Pay, Pay in full or in installments to complete your purchase securely.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="paymentCard()" class="payments">
+                                <div class="flex items-center py-[15px] border-b">
+                                    <input id="amazon" type="radio" value="" name="payment_card"
+                                        class="w-4 h-4 text-[#000] border-gray-300 focus:ring-[#000] focus:ring-8 ">
+                                    <label for="amazon"
+                                        class="ml-2 text-[#545454] text-[14px] font_g_book capitalize table-cell w-full">
+                                        <img class="h-[20px]" height=""
+                                            src="./assets/images/payment/Amazon_Pay_logo.svg" alt="">
+                                    </label>
+                                </div>
+                                <div class="card_details">
+                                    <div class="card_form">
+                                        <div class="bg-[#FAFAFA] p-[20px] border-[1px] border-t-0 text-center">
+                                            <i class="fa-regular fa-hand-point-right text-[150px] text-[#999]"></i>
+                                            <p class="font_g_book text-[12px]">After clicking “Complete Order”, you will
+                                                be redirected to Shop
+                                                Pay, Pay in full or in installments to complete your purchase securely.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div onclick="paymentCard()" class="payments">
+                                <div class="flex items-center py-[15px] border-b">
+                                    <input id="alipay" type="radio" value="" name="payment_card"
+                                        class="w-4 h-4 text-[#000] border-gray-300 focus:ring-[#000] focus:ring-8 ">
+                                    <label for="alipay"
+                                        class="ml-2 text-[#545454] text-[14px] font_g_book capitalize table-cell w-full">
+                                        <img class="h-[20px]" height="" src="./assets/images/payment/alipay.png" alt="">
+                                    </label>
+                                </div>
+                                <div class="card_details">
+                                    <div class="card_form">
+                                        <div class="bg-[#FAFAFA] p-[20px] border-[1px] border-t-0 text-center">
+                                            <i class="fa-regular fa-hand-point-right text-[150px] text-[#999]"></i>
+                                            <p class="font_g_book text-[12px]">After clicking “Complete Order”, you will
+                                                be redirected to Shop
+                                                Pay, Pay in full or in installments to complete your purchase securely.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <!-- Billing Address -->

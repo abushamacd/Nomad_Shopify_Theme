@@ -346,6 +346,21 @@ if (prev !== null) {
   });
 }
 
+// Payment
+const paymentCard = () => {
+  const payments = document.getElementsByClassName("payments");
+  for (let i = 0; i < payments.length; i++) {
+    console.log(payments[i].children[1]);
+    if (payments[i].children[1].classList.contains("active")) {
+      payments[i].children[1].classList.remove("active");
+    }
+  }
+
+  $(".payments").click(function () {
+    $(this.children[1]).addClass("active").siblings().removeClass(" active");
+  });
+};
+
 // $(".slider-for").slick({
 //   slidesToShow: 1,
 //   slidesToScroll: 1,
